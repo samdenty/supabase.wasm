@@ -1,8 +1,8 @@
 echo Fetching asset from slow CDN, this would normally be cached forever by browser
-cat out.wasm.br >/dev/null
+cat out.wasm.gz >/dev/null
 
 echo Done fetching, decompressing
-node -e "require('fs').promises.readFile('out.wasm.br').then(d=>require('zlib').brotliDecompress(d)).then(d=>require('fs').promises.writeFile('out.wasm',d))"
+node -e "require('fs').writeFileSync('out.wasm',require('zlib').gunzipSync(require('fs').readFileSync('out.wasm.gz')))"
 
 echo Done decompressing
 
