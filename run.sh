@@ -9,3 +9,7 @@ echo Done decompressing
 echo printing help...
 
 wasm out.wasm -- 'supabase' 'help'
+
+echo initializing
+
+wasm out.wasm --mapdir /repo:. -- 'supabase' 'init' '--workdir=/repo'
