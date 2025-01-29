@@ -1,3 +1,3 @@
 {
-    "startCommand": "./run.sh"
+  "startCommand": "./run.sh"
 }
